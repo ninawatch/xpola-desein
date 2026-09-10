@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- النسخة النهائية بعد التعديل -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- شراء من داخل التطبيق -->
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <!-- Mn ag -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+    <!-- صلاحيات التخزين -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"
+        tools:ignore="SelectedPhotoAccess" />
+
+
+
+    <queries>
+        <package android:name="com.instantbits.cast.webvideo" />
+        <package android:name="app.greyshirts.sslcapture" />
+        <package android:name="com.emanuelef.remote_capture" />
+        <package android:name="com.minhui.networkcapture" />
+        <package android:name="com.minhui.networkcapture.pro" />
+        <package android:name="com.guoshi.httpcanary" />
+        <package android:name="com.guoshi.httpcanary.premium" />
+        <package android:name="jp.co.taosoftware.android.packetcapture" />
+        <package android:name="tech.httptoolkit.android.v1" />
+        <package android:name="com.reqable.android" />
+        <package android:name="com.telerik.fiddler" />
+        <package android:name="com.pingidentity.burpsuite" />
+        <package android:name="com.xk72.charles" />
+        <package android:name="com.black.canary" />
+        <package android:name="com.pcapdroid.mitm" />
+        <package android:name="com.reqable.android.helper" />
+        <package android:name="np.filemanager.pro" />
+        <package android:name="com.sniffer" />
+        <package android:name="com.llldur" />
+        <package android:name="bin.mt.plus" />
+        <package android:name="com.android.vending" />
+        <package android:name="com.xpola.proxy" />
+    </queries>
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.type.television"
+        android:required="false" />
+
+    <application
+        android:name="com.xpola.player.App"
+        android:allowBackup="true"
+        android:defaultToDeviceProtectedStorage="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:banner="@drawable/tv_banner"
+        android:isGame="false"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.AGH.DEV"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:supportsRtl"
+        android:largeHeap="true"
+        tools:targetApi="r">
+        <activity
+            android:name="com.xpola.player.Ui.Activities.Splash"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true"
+            android:theme="@style/Theme.AGH.DEV.SPLASH">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--
+ // code for tv for google mobile delete it  -->
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xpola.player.Ui.Activities.VlcPlayer"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AGH.DEV.FULLSCREEN" />
+        <activity
+            android:name="com.xpola.player.Ui.Activities.Player"
+            android:supportsPictureInPicture="true"
+            android:resizeableActivity="true"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AGH.DEV.FULLSCREEN"
+            tools:ignore="DiscouragedApi">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="intent" />
+                <data android:scheme="servers" />
+                <data android:scheme="xmtv" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/m3u" />
+                <data android:mimeType="video/m3u8" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="video/hls" />
+                <data android:mimeType="audio/mpegurl" />
+                <data android:mimeType="audio/x-mpegurl" />
+                <data android:mimeType="application/x-mpegurl" />
+                <data android:mimeType="application/vnd.apple.mpegurl" />
+                <data android:mimeType="video/mp2t" />
+                <data android:mimeType="application/dash+xml" />
+                <data android:mimeType="audio/mp3" />
+                <data android:mimeType="audio/m4a" />
+                <data android:mimeType="audio/m4b" />
+                <data android:mimeType="audio/x-mp3" />
+                <data android:mimeType="audio/mpeg" />
+                <data android:mimeType="audio/mp4" />
+                <data android:mimeType="audio/mp4a-latm" />
+                <!--  added by me    -->
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.m3u8" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="video/*" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.mp4" />
+                <data android:scheme="http" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.m3u8" />
+                <data android:scheme="http" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.mpd" />
+                <data android:scheme="http" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.ts" />
+
+                <data android:scheme="https" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.mp4" />
+                <data android:scheme="https" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.m3u8" />
+                <data android:scheme="https" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.mpd" />
+                <data android:scheme="https" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.ts" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xpola.player.Ui.Activities.browser"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="xmtv-browser" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xpola.player.Ui.Activities.iframe"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="xmtv-iframe" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xpola.player.Ui.Activities.LocalMediaActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:theme="@style/Theme.AGH.DEV" />
+        <activity
+            android:name="com.xpola.player.Ui.Activities.m3Player"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="xmtv-m3u" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xpola.player.Ui.Activities.Filter"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <!-- <data android:mimeType="*/*" />-->
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.xpola.player.Ui.Activities.Main"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.xpola.player.Ui.Activities.AddLink"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:exported="true" />
+        <activity
+            android:name=".Ui.Activities.AboutActivity"
+            android:label="About Us"
+            android:theme="@style/Theme.AGH.DEV.ABOUT" />
+
+        <service
+            android:name="com.xpola.player.Notifs.FCMNotifs"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="false"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--  <meta-data
+              android:name="applovin.sdk.key"
+              android:value="W6arwPwxNcH5xAGprNJVNDHTfd3S8gF33JrJ2wetr4cyJGtTIR8ldOzD4fAm_n6c7tpiDnqp22FHHgbWsOupDp" /> -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9069895492217919~1766882356" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="Notifs" />
+        <activity android:name=".Ui.Activities.WifiControlActivity" />
+        <activity
+            android:name=".Ui.Activities.RemoveAdsActivity"
+            android:exported="false"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

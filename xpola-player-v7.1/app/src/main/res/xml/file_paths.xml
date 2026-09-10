@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- للملفات في التخزين الخارجي -->
+    <external-path name="external_storage" path="." />
+
+    <!-- للملفات في مجلد التطبيق الخارجي -->
+    <external-files-path name="external_files" path="." />
+
+    <!-- للملفات في مجلد الوسائط الخارجي -->
+    <external-media-path name="external_media" path="." />
+
+    <!-- للملفات في مجلد التخزين المؤقت -->
+    <cache-path name="cache" path="." />
+
+    <!-- للملفات في مجلد التطبيق الداخلي -->
+    <files-path name="files" path="." />
+
+    <!-- إضافة مسارات إضافية لأندرويد 9 وما دون -->
+    <root-path name="root" path="." />
+</paths>

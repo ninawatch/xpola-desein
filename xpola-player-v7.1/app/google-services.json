@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "108678340310",
+    "project_id": "xpola-d30ff",
+    "storage_bucket": "xpola-d30ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108678340310:android:ccd543992f83430a397377",
+        "android_client_info": {
+          "package_name": "com.xpola.player"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWxB5kQ5tLAy3KvSJA_IKmDr-6tytFpJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

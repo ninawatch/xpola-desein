@@ -1,0 +1,49 @@
+[versions]
+agp = "8.13.0"
+applovinSdk = "11.11.3"
+audienceNetworkSdk = "6.16.0"
+constraintlayout = "2.1.4"
+error_prone_annotations = "2.26.0"
+espressoCore = "3.5.1"
+exoplayer = "2.18.1"
+firebaseDatabase = "21.0.0"
+firebaseMessaging = "24.1.0"
+glide = "4.16.0"
+googleServices = "4.4.2"
+oneSignal = "5.1.0"
+gson = "2.11.0"
+appcompat = "1.6.0"
+junit = "4.13.2"
+material = "1.10.0"
+playServicesAds = "23.1.0"
+playServicesAdsIdentifier = "18.1.0"
+playServicesAppset = "16.1.0"
+playServicesBasement = "18.4.0"
+runner = "1.5.2"
+
+[libraries]
+applovin-sdk = { module = "com.applovin:applovin-sdk", version.ref = "applovinSdk" }
+oneSignal = { module = "com.onesignal:OneSignal", version.ref = "oneSignal" }
+audience-network-sdk = { module = "com.facebook.android:audience-network-sdk", version.ref = "audienceNetworkSdk" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+error_prone_annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "error_prone_annotations" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+exoplayer = { module = "com.google.android.exoplayer:exoplayer", version.ref = "exoplayer" }
+firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "firebaseDatabase" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+junit = { module = "junit:junit", version.ref = "junit" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
+play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "playServicesAdsIdentifier" }
+play-services-appset = { module = "com.google.android.gms:play-services-appset", version.ref = "playServicesAppset" }
+play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "playServicesBasement" }
+runner = { module = "androidx.test:runner", version.ref = "runner" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+

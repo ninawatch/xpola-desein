@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Ui.Activities.WifiControlActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/tolbar_gradient"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/wifi_control"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/body_gradient"
+        android:padding="24dp">
+
+        <!-- صورة الواي فاي في الأعلى -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_wifi"
+            android:contentDescription="@string/wifi_control"
+            android:layout_marginBottom="24dp"
+            android:tint="@color/white" />
+
+        <!-- بطاقة للمحتوى لإضفاء مظهر أكثر أناقة -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wifi_control_info"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/ip_address_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IP Address: Not available"
+                    android:textSize="18sp"
+                    android:textColor="@color/control2"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- زر بتصميم دائري حديث -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/server_toggle_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Server"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="24dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            app:backgroundTint="@color/toolbar"
+            android:textColor="@color/gnt_white"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+--- ./xpola-player-v7.1/app/src/main/java/com/xpola/player/Ui/Activities/VlcPlayer.java
++++ ./xpola-player-v7.1/app/src/main/java/com/xpola/player/Ui/Activities/VlcPlayer.java
+@@ -43,8 +44,6 @@
+     private String mTitle;
+     private Map<String, String> mHeaders;
+
+-    private LibVLC mLibVLC;
+-    private MediaPlayer mMediaPlayer;
+     private SurfaceView mSurfaceView;
+     private RelativeLayout mControlsLayout;
+     private boolean mIsControlsVisible = true;

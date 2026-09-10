@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="65dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/drawer_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/drawer_privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_privacy" />
+            <ImageView
+                android:id="@+id/wifi_control"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_wifi" />
+            <ImageView
+                android:id="@+id/ads_control"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_ads" />
+            <ImageView
+                android:id="@+id/drawer_web"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_web" />
+
+
+            <ImageView
+                android:id="@+id/drawer_facebook"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_facebook" />
+
+            <ImageView
+                android:id="@+id/drawer_telegram"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_telegram" />
+
+            <ImageView
+                android:id="@+id/drawer_gmail"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_gmail" />
+            <ImageView
+                android:id="@+id/drawer_contacturl"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_contacturl" />
+            <ImageView
+                android:id="@+id/drawer_rate"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_rate"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/drawer_share"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_share" />
+            <ImageView
+                android:id="@+id/drawer_about"
+                android:layout_width="@dimen/drawer_icons_size"
+                android:layout_height="@dimen/drawer_icons_size"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_about" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

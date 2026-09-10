@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Transfer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --toolbar: #1c3a5e;
+            --colorPrimary: #1f4068;
+            --colorSecondary: #2a5298;
+            --colorLight: #4a72c4;
+            --textColor: #ffffff;
+            --bgColor: #f5f7fa;
+            --bgBackground: #213e71 ;
+            --borderColor: #d1d8e0;
+            --successColor: #28a745;
+            --dangerColor: #dc3545;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bgBackground);
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--toolbar), var(--colorPrimary));
+            color: var(--textColor);
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin: 20px 0;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--colorPrimary), var(--colorSecondary));
+            color: var(--textColor);
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--colorPrimary);
+        }
+
+        input[type="text"],
+        input[type="url"],
+        select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--borderColor);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        input[type="color"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--colorLight);
+            box-shadow: 0 0 0 3px rgba(74, 114, 196, 0.2);
+        }
+
+        input[type="color"] {
+            height: 50px; /* Adjust height for color picker */
+        }
+
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid var(--borderColor);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            border-color: var(--colorLight);
+            background-color: rgba(74, 114, 196, 0.05);
+        }
+
+        .radio-option input {
+            margin-right: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--colorPrimary), var(--colorSecondary));
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(31, 64, 104, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--borderColor);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--colorPrimary), var(--colorSecondary));
+            color: var(--textColor);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(74, 114, 196, 0.05);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-edit {
+            background-color: var(--colorLight);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-delete {
+            background-color: var(--dangerColor);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-edit:hover {
+            background-color: var(--colorSecondary);
+        }
+
+        .btn-delete:hover {
+            background-color: #bd2130;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .radio-group {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header {
+                font-size: 1.1rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Additional effects */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(31, 64, 104, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(31, 64, 104, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(31, 64, 104, 0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* إخفاء حقل اختيار اللون */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-wifi"></i>
+                <h1>Wi-Fi Transfer</h1>
+            </div>
+            <div class="user">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card fade-in">
+        <div class="card-header">
+            <i class="fas fa-plus-circle"></i>
+            Add New Item
+        </div>
+        <div class="card-body">
+            <form action="/add" method="post" id="itemForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter name" required>
+                </div>
+
+                <!-- حقل اللون المخفي -->
+                <div class="form-group hidden">
+                    <label for="color">Color</label>
+                    <input type="color" id="color" name="color" value="#ffffff">
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL Link</label>
+                    <input type="url" id="url" name="url" placeholder="Enter URL link" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user_agent">User-Agent</label>
+                    <input type="text" id="user_agent" name="user_agent" placeholder="Enter User-Agent">
+                </div>
+
+                <div class="form-group">
+                    <label for="referer">Referer</label>
+                    <input type="text" id="referer" name="referer" placeholder="Enter Referer">
+                </div>
+
+                <div class="form-group">
+                    <label for="license">License</label>
+                    <input type="text" id="license" name="license" placeholder="Enter License">
+                </div>
+
+                <div class="form-group">
+                    <label for="schema">Schema</label>
+                    <select id="schema" name="schema">
+                        <option value="">Select a schema</option>
+                        <option value="clearkey">ClearKey</option>
+                        <option value="widevine">Widevine</option>
+                        <option value="playready">PlayReady</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Player Type</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="exo" name="player" value="exoplayer" checked>
+                            <label for="exo">ExoPlayer</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="web" name="player" value="webplayer">
+                            <label for="web">Web Player</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="browser" name="player" value="browser">
+                            <label for="browser">Web Browser</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="m3u" name="player_type" value="m3u">
+                            <label for="m3u">M3U</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn pulse">
+                    <i class="fas fa-plus"></i> Add Item
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card fade-in">
+        <div class="card-header">
+            <i class="fas fa-list"></i>
+            Existing Items
+        </div>
+        <div class="card-body">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Url</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--DATA-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add scroll effects
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    });
+</script>
+<script>
+    const exoRadio = document.getElementById('exo');
+    const webRadio = document.getElementById('web');
+    const browserRadio = document.getElementById('browser');
+    const m3uRadio = document.getElementById('m3u');
+
+    [exoRadio, webRadio, browserRadio].forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                m3uRadio.checked = false;
+            }
+        });
+    });
+
+    m3uRadio.addEventListener('change', () => {
+        if (m3uRadio.checked) {
+            exoRadio.checked = true;
+        }
+    });
+</script>
+<script>
+    // دالة لتوليد لون فريد بناءً على الوقت الحالي
+    function generateTimeBasedColor() {
+        const now = new Date();
+
+        // استخدام الوقت الحالي لإنشاء قيم RGB فريدة
+        const r = (now.getHours() * 10) % 256;           // استخدام الساعات
+        const g = (now.getMinutes() * 4) % 256;         // استخدام الدقائق
+        const b = (now.getSeconds() * 4 + now.getMilliseconds() / 4) % 256; // استخدام الثواني والمللي ثانية
+
+        // تحويل القيم إلى تنسيق HEX
+        const toHex = (value) => {
+            const hex = Math.floor(value).toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        };
+
+        return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    }
+
+    // تعيين اللون تلقائياً عند تحميل الصفحة وعند إرسال النموذج
+    document.addEventListener('DOMContentLoaded', function() {
+        const colorInput = document.getElementById('color');
+        colorInput.value = generateTimeBasedColor();
+
+        // تحديث اللون كل ثانية لتجنب التكرار إذا بقي المستخدم في الصفحة لفترة
+        setInterval(() => {
+            colorInput.value = generateTimeBasedColor();
+        }, 1000);
+    });
+
+    document.getElementById('itemForm').addEventListener('submit', function(e) {
+        const license = document.getElementById('license').value.trim();
+        const schema = document.getElementById('schema').value;
+
+        if (license !== "" && schema === "") {
+            e.preventDefault();
+            alert("Please select a schema if License is filled.");
+            document.getElementById('schema').focus();
+        }
+
+        // تحديث اللون قبل الإرسال لضمان أنه الأحدث
+        document.getElementById('color').value = generateTimeBasedColor();
+    });
+</script>
+</body>
+</html>

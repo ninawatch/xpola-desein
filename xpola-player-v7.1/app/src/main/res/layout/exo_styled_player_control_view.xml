@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/exo_controls_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layoutDirection="ltr" />
+
+    <FrameLayout
+        android:id="@+id/exo_bottom_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/exo_styled_bottom_bar_height"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/exo_styled_bottom_bar_margin_top"
+        android:background="#20000000"
+        android:layoutDirection="ltr">
+
+        <!-- الوقت -->
+        <LinearLayout
+            android:id="@+id/exo_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layoutDirection="ltr"
+            android:paddingStart="@dimen/exo_styled_bottom_bar_time_padding"
+            android:paddingEnd="@dimen/exo_styled_bottom_bar_time_padding">
+
+            <TextView
+                android:id="@+id/exo_position"
+                style="@style/ExoStyledControls.TimeText.Position" />
+
+            <TextView
+                style="@style/ExoStyledControls.TimeText.Separator" />
+
+            <TextView
+                android:id="@+id/exo_duration"
+                style="@style/ExoStyledControls.TimeText.Duration" />
+        </LinearLayout>
+
+        <!-- الأزرار السفلية -->
+        <LinearLayout
+            android:id="@+id/exo_basic_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:gravity="center"
+            android:layoutDirection="ltr">
+
+            <ImageButton
+                android:id="@+id/exo_subtitle"
+                style="@style/ExoStyledControls.Button.Bottom.CC"
+                android:contentDescription="@string/app_name" />
+
+            <!-- زر النسخ الجديد -->
+            <ImageButton
+                android:id="@+id/exo_copy"
+                style="@style/ExoStyledControls.Button.Bottom.Copy"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/exo_settings"
+                style="@style/ExoStyledControls.Button.Bottom.Settings"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/player_settings"
+                style="@style/ExoStyledControls.Button.Bottom.Video"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/exo_dlna"
+                style="@style/ExoStyledControls.Button.Bottom.Dlna"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/exo_cast"
+                style="@style/ExoStyledControls.Button.Bottom.Cast"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/player_ratio"
+                style="@style/ExoStyledControls.Button.Bottom.RATIO"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/player_pip"
+                style="@style/ExoStyledControls.Button.Bottom.PIP"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/player_fullscreen"
+                style="@style/ExoStyledControls.Button.Bottom.FullScreen"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/exo_overflow_show"
+                style="@style/ExoStyledControls.Button.Bottom.OverflowShow"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+        <!-- overflow -->
+        <HorizontalScrollView
+            android:id="@+id/exo_extra_controls_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:id="@+id/exo_extra_controls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layoutDirection="ltr">
+
+                <ImageButton
+                    android:id="@+id/exo_overflow_hide"
+                    style="@style/ExoStyledControls.Button.Bottom.OverflowHide"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/exo_progress_placeholder"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/exo_styled_progress_layout_height"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/exo_styled_progress_margin_bottom" />
+
+    <LinearLayout
+        android:id="@+id/exo_minimal_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom|center"
+        android:layout_marginBottom="@dimen/exo_styled_minimal_controls_margin_bottom"
+        android:gravity="center_vertical"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/exo_minimal_fullscreen"
+            style="@style/ExoStyledControls.Button.Bottom.FullScreen"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/exo_center_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:padding="@dimen/exo_styled_controls_padding">
+
+        <include layout="@layout/exo_styled_player_control_rewind_button" />
+
+        <ImageButton
+            android:id="@+id/exo_play_pause"
+            style="@style/ExoStyledControls.Button.Center.PlayPause"
+            android:contentDescription="@string/app_name" />
+
+        <include layout="@layout/exo_styled_player_control_ffwd_button" />
+    </LinearLayout>
+
+</merge>

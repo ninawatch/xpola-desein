@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">xPola Player</string>
+    <string name="app_name_v">xPola Player 7.2</string>
+    <string name="name">Name</string>
+    <string name="url_link_m3u_m3u8_ts_mp4">Url Link (M3U,M3U8,TS,MP4…)</string>
+    <string name="user_agent">User-Agent</string>
+    <string name="referer">Referrer</string>
+    <string name="auth">Authentication</string>
+    <string name="cookie">Cookie (name=joe;app=xpola;id=value ...)</string>
+    <string name="is_m3u_link">is M3u Link ?</string>
+    <string name="exoplayer">EXO PLAYER</string>
+    <string name="web_player">WEB PLAYER</string>
+    <string name="web_browser">WEB BROWSER</string>
+    <string name="license">License</string>
+    <string name="scheme">Scheme</string>
+    <string name="save">SAVE</string>
+    <string name="edit_dialog">Edit</string>
+    <string name="delete_dialog">DELETE</string>
+    <string name="close_dialog">CLOSE</string>
+    <string name="new_update_title">Update Available</string>
+    <string name="new_update_down_btn">Download</string>
+    <string name="new_update_cancel_btn">Close</string>
+    <string name="add_name">Name required</string>
+    <string name="add_url">Url required</string>
+
+    <string name="warning">Warning</string>
+    <string name="back_button">Go Back</string>
+    <string name="kayan_privacy">Privacy Policy</string>
+    <string name="kayan_download">Download</string>
+
+    <string name="exo_track_selection_title_video">VIDEO</string>
+    <string name="exo_track_selection_title_audio">AUDIO</string>
+    <string name="exo_track_selection_title_text">TEXT</string>
+    <string name="error_unsupported_video" translatable="false">Media includes video tracks, but none are playable by this device</string>
+    <string name="error_unsupported_audio" translatable="false">Media includes audio tracks, but none are playable by this device</string>
+    <string name="notifications">Notifications</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="privacy_policy"><a href="#">Privacy Policy</a></string>
+    <string name="copyright"><a href="#">Copyright</a></string>
+    <string name="im_agree">I have read and accept the Terms of Use and privacy policy</string>
+    <string name="agreements">This app does not provide or include any media or content, users must submit own content. We do not offer any kind of IPTV services such as IPTV subscriptions, Flux or codes.\n xPola Player does not directly infringe Copyright because no copy is made on application servers. xPola Player is only an Media Player, and therefore it is Not a valid reason to submit a DMCA notice.\n To remove content from the web, content The owner has to contact the web host that actually Content hosts (not moderators of this app). At xPola Player, we are ready to block any server address if we Receive a complaint about distribution illegal content.</string>
+    <string name="ad">AD</string>
+    <string name="new_update_available">New update available</string>
+    <string name="wait">Wait...</string>
+    <string name="exit">EXIT</string>
+    <string name="disable_vpn">To continue using the application, please disable your VPN connection. Thank you for your understanding.</string>
+    <string name="vpn">VPN</string>
+    <string name="retry">Try Again</string>
+    <string name="wifi_control">Wi-Fi Transfer </string>
+    <string name="wifi_control_info">Connect to the same WiFi network and open the following address in your browser: </string>
+    <string name="you_are_offline">No internet connection detected</string>
+
+    <string name="btn_add_subtitle">Add </string>
+    <string name="title_add_subtitle">Add Subtitle </string>
+    <string name="cancel_add_subtitle">Cancel </string>
+    <string name="link_subtitle_supported">Supported formats: SRT, VTT, ASS</string>
+    <string name="subtitle_url">Subtitle URL</string>
+
+    <string name="error_no_url">No URL provided</string>
+    <string name="error_playback_failed">Playback failed</string>
+    <string name="playback_completed">Playback completed</string>
+    <string name="aspect_ratio_default">Default</string>
+</resources>

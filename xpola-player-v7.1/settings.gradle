@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs 'app/libs' // <-- هنا ضع مجلد الـ AAR
+        }
+    }
+}
+
+rootProject.name = "Flax Player"
+include ':app'
+include ':nativetemplates'
