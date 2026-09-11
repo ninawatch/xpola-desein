@@ -10,8 +10,8 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/tolbar_gradient"
+        android:layout_height="52dp"
+        android:background="#121824"
         app:navigationIcon="@drawable/ic_back"
         app:title="@string/wifi_control"
         app:titleTextColor="@color/white" />
@@ -22,12 +22,12 @@
         android:layout_below="@id/toolbar"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="24dp"
             android:contentDescription="@string/wifi_control"
             android:src="@drawable/ic_wifi"
             app:tint="@color/brand_accent" />
@@ -35,33 +35,33 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            app:cardBackgroundColor="#161C24"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#121824"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="12dp"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
                     android:text="@string/wifi_control_info"
-                    android:textColor="@color/secondary"
-                    android:textSize="15sp" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="#212B36" />
+                    android:layout_marginBottom="12dp"
+                    android:background="#1E2B3C" />
 
                 <TextView
                     android:id="@+id/ip_address_text"
@@ -72,7 +72,7 @@
                     android:gravity="center"
                     android:text="IP Address: Not available"
                     android:textColor="@color/brand_accent"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -82,15 +82,15 @@
             android:id="@+id/server_toggle_button"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
-            android:layout_height="52dp"
+            android:layout_height="48dp"
             android:backgroundTint="@color/brand_primary"
-            android:paddingStart="36dp"
-            android:paddingEnd="36dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
             android:text="Start Server"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            app:cornerRadius="26dp" />
+            android:textSize="15sp"
+            app:cornerRadius="24dp" />
 
     </LinearLayout>
 

@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Typography Sizes -->
     <dimen name="text_size_10">10sp</dimen>
     <dimen name="text_size_12">12sp</dimen>
     <dimen name="text_size_14">14sp</dimen>
-    <dimen name="text_size_16">16sp</dimen>
-    <dimen name="text_size_18">18sp</dimen>
-    <dimen name="text_size_20">20sp</dimen>
-    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_16">15sp</dimen>
+    <dimen name="text_size_18">17sp</dimen>
+    <dimen name="text_size_20">19sp</dimen>
+    <dimen name="text_size_24">22sp</dimen>
 
     <dimen name="items_text_size">14sp</dimen>
     <dimen name="items_text_size_12">12sp</dimen>
-    <dimen name="channel_item_width">64dp</dimen>
-    <dimen name="drawer_icons_size">28dp</dimen>
+    <dimen name="channel_item_width">52dp</dimen>
+    <dimen name="drawer_icons_size">24dp</dimen>
 
     <!-- Layout Spacing -->
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_sm">8dp</dimen>
-    <dimen name="spacing_md">16dp</dimen>
-    <dimen name="spacing_lg">24dp</dimen>
-    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">20dp</dimen>
+    <dimen name="spacing_xl">28dp</dimen>
 
     <!-- Corner Radii -->
-    <dimen name="radius_sm">8dp</dimen>
-    <dimen name="radius_md">16dp</dimen>
-    <dimen name="radius_lg">24dp</dimen>
+    <dimen name="radius_sm">6dp</dimen>
+    <dimen name="radius_md">10dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
 
     <!-- Player Controls -->
-    <dimen name="player_btn_size">48dp</dimen>
-    <dimen name="player_btn_large">64dp</dimen>
+    <dimen name="player_btn_size">40dp</dimen>
+    <dimen name="player_btn_large">56dp</dimen>
 </resources>

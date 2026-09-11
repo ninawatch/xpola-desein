@@ -16,36 +16,36 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="sans-serif-bold"
                 android:text="Remove Ads"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <ImageView
                 android:id="@+id/btn_close"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="8dp"
+                android:padding="6dp"
                 android:src="@drawable/ic_close"
                 app:tint="@color/white" />
         </RelativeLayout>
 
-        <!-- Premium Subscription Card -->
+        <!-- Premium Subscription Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/card_background"
             android:orientation="vertical"
             android:padding="16dp">
@@ -55,24 +55,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-bold"
-                android:text="✨ Premium Subscription"
+                android:text="Premium Subscription"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="sans-serif"
-                android:text="Get uninterrupted experience with no ads forever"
-                android:textColor="@color/secondary"
+                android:text="Get an ad-free experience across all devices"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
             <!-- Monthly Plan -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_dialog_glass"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -87,17 +87,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-bold"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Monthly Plan"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Remove ads for 1 month"
-                        android:textColor="@color/secondary"
+                        android:text="1 Month Access"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -107,26 +107,27 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-bold"
                     android:text="..."
-                    android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_month"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="36dp"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="sans-serif-bold"
-                    android:minWidth="72dp"
+                    android:backgroundTint="@color/brand_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:minWidth="64dp"
                     android:text="BUY"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <!-- 6 Months Plan -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_dialog_glass"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -141,17 +142,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-bold"
+                        android:fontFamily="sans-serif-medium"
                         android:text="6 Months Plan"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Most popular choice"
-                        android:textColor="@color/brand_accent"
+                        android:text="6 Months Access"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -161,19 +162,20 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-bold"
                     android:text="..."
-                    android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_6months"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="36dp"
                     android:layout_marginStart="12dp"
                     android:backgroundTint="@color/brand_primary"
-                    android:fontFamily="sans-serif-bold"
-                    android:minWidth="72dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:minWidth="64dp"
                     android:text="BUY"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <!-- Yearly Plan -->
@@ -194,17 +196,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-bold"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Yearly Plan"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Best value for money"
-                        android:textColor="@color/green"
+                        android:text="Best Value"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -214,37 +216,37 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-bold"
                     android:text="..."
-                    android:textColor="@color/green"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/btn_year"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="36dp"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#F59E0B"
-                    android:fontFamily="sans-serif-bold"
-                    android:minWidth="72dp"
+                    android:backgroundTint="@color/brand_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:minWidth="64dp"
                     android:text="BUY"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- Restore Purchases Button -->
             <Button
                 android:id="@+id/btn_restore"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/button_gradient_background"
                 android:fontFamily="sans-serif-medium"
                 android:text="Restore Purchases"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 
-        <!-- Free Reward Card -->
+        <!-- Temporary Reward Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -257,29 +259,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-bold"
-                android:text="🎁 Free Temporary Removal"
+                android:text="Temporary Reward"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="sans-serif"
                 android:text="Watch ads to remove ads temporarily"
-                android:textColor="@color/secondary"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="6dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -287,9 +289,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Progress to next reward"
-                        android:textColor="@color/secondary"
-                        android:textSize="13sp" />
+                        android:text="Progress to reward"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/txt_progress"
@@ -297,59 +299,59 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:text="1/2 ads watched"
-                        android:textColor="@color/green"
-                        android:textSize="13sp" />
+                        android:textColor="@color/brand_accent"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <ProgressBar
                     android:id="@+id/progress_bar"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="8dp"
+                    android:layout_height="6dp"
                     android:max="2"
                     android:progress="1"
-                    android:progressTint="@color/green" />
+                    android:progressTint="@color/brand_accent" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:text="Watch 2 ads to remove ads for 1 hour"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/btn_reward"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:backgroundTint="@color/brand_primary"
-                android:fontFamily="sans-serif-bold"
+                android:fontFamily="sans-serif-medium"
                 android:text="WATCH REWARD AD"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="⏰ Reward expires after 1 hour"
-                android:textColor="@color/secondary"
-                android:textSize="12sp" />
+                android:layout_marginTop="8dp"
+                android:text="Expires after 1 hour"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
         </LinearLayout>
 
-        <!-- Footer Note -->
+        <!-- Disclaimer Footer -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:lineSpacingExtra="4dp"
-            android:text="Your purchase supports further development of the app. All subscriptions auto-renew unless canceled 24 hours before the end of the current period."
-            android:textColor="@color/secondary"
-            android:textSize="12sp" />
+            android:lineSpacingExtra="3dp"
+            android:text="Your purchase supports further development of XPoLa Player. Subscriptions auto-renew unless canceled."
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
 
     </LinearLayout>
 </ScrollView>
