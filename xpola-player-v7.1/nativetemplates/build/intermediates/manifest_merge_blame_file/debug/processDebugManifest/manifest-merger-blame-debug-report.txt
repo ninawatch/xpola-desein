@@ -5,8 +5,8 @@
 5    <uses-sdk android:minSdkVersion="21" />
 6
 7    <application android:supportsRtl="false" >
-7-->C:\Users\chouk\Desktop\xpola-player-v7.1\nativetemplates\src\main\AndroidManifest.xml:3:5-5:19
-7-->C:\Users\chouk\Desktop\xpola-player-v7.1\nativetemplates\src\main\AndroidManifest.xml:3:18-45
+7-->/app/xpola-player-v7.1/nativetemplates/src/main/AndroidManifest.xml:3:5-5:19
+7-->/app/xpola-player-v7.1/nativetemplates/src/main/AndroidManifest.xml:3:18-45
 8    </application>
 9
 10</manifest>

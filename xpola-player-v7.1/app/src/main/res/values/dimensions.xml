@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <dimen name="design_bottom_navigation_text_size" tools:override="true">13sp</dimen>
-    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">14sp</dimen>
-    <dimen name="channel_item_width">110dp</dimen>
-    <dimen name="icon_size">25dp</dimen>
-    <dimen name="items_text_size_12">12sp</dimen>
-    <dimen name="items_text_size_13">13sp</dimen>
-    <dimen name="items_text_size">14sp</dimen>
-    <dimen name="text_size_15">15sp</dimen>
+<resources>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_18">18sp</dimen>
-    <dimen name="text_size_19">19sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
-    <dimen name="player_icon_size">30dp</dimen>
-    <dimen name="player_icon_margin">30dp</dimen>
-    <dimen name="drawer_icons_size">30dp</dimen>
-    <dimen name="banner_height">50dp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+
+    <dimen name="items_text_size">14sp</dimen>
+    <dimen name="items_text_size_12">12sp</dimen>
+    <dimen name="channel_item_width">64dp</dimen>
+    <dimen name="drawer_icons_size">28dp</dimen>
+
+    <!-- Layout Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Corner Radii -->
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">16dp</dimen>
+    <dimen name="radius_lg">24dp</dimen>
+
+    <!-- Player Controls -->
+    <dimen name="player_btn_size">48dp</dimen>
+    <dimen name="player_btn_large">64dp</dimen>
 </resources>

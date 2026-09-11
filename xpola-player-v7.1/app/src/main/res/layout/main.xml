@@ -6,36 +6,36 @@
     android:layout_height="match_parent"
     android:background="@drawable/body_gradient">
 
-    <!-- الواجهة الأصلية -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- التولبار -->
-
-        <!-- غلاف التولبار -->
+        <!-- Top Navigation Bar / Header -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="64dp"
+            android:background="@drawable/tolbar_gradient"
+            android:elevation="4dp">
 
-            <!-- التولبار العادي -->
             <LinearLayout
                 android:id="@+id/main_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/tolbar_gradient"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="6dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <ImageView
                     android:id="@+id/main_open_menu"
                     style="?android:actionButtonStyle"
-                    android:layout_width="@android:dimen/app_icon_size"
-                    android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"
+                    android:padding="8dp"
                     android:src="@drawable/ic_menu"
                     app:tint="@color/white" />
 
@@ -43,7 +43,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
                     android:gravity="center"
+                    android:letterSpacing="0.05"
                     android:text="@string/app_name_v"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
@@ -51,34 +53,36 @@
                 <ImageView
                     android:id="@+id/main_search_btn"
                     style="?android:actionButtonStyle"
-                    android:layout_width="@android:dimen/app_icon_size"
-                    android:layout_height="@android:dimen/app_icon_size"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"
+                    android:padding="8dp"
                     android:src="@drawable/ic_search"
                     app:tint="@color/white" />
             </LinearLayout>
 
-            <!-- SearchView فوق التولبار (Overlay) -->
+            <!-- Overlay Search Bar -->
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/main_search_view"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-
-                android:background="@drawable/tolbar_gradient"
-                android:visibility="gone"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_dialog_glass"
+                android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:clickable="true"
-                app:iconifiedByDefault="false"
+                android:visibility="gone"
                 app:closeIcon="@drawable/ic_close"
-                app:searchIcon="@drawable/ic_search"
-                app:defaultQueryHint="Search" />
-
+                app:defaultQueryHint="Search media or streams..."
+                app:iconifiedByDefault="false"
+                app:searchIcon="@drawable/ic_search" />
         </FrameLayout>
 
-
-        <!-- باقي الواجهة -->
+        <!-- Main Body Content with Drawer -->
         <androidx.drawerlayout.widget.DrawerLayout
             android:id="@+id/main_drawer"
             android:layout_width="match_parent"
@@ -88,7 +92,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -100,48 +103,49 @@
                         android:id="@+id/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="4dp"
+                        android:clipToPadding="false"
+                        android:padding="12dp"
                         android:visibility="gone" />
 
+                    <!-- Floating Action Add Link Button -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/main_addlink"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_margin="5dp"
+                        android:layout_margin="20dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:foreground="?android:selectableItemBackgroundBorderless"
                         android:tag="fab"
                         android:visibility="gone"
-                        app:cardBackgroundColor="@color/white"
-                        app:cardElevation="10dp">
+                        app:cardBackgroundColor="@color/brand_primary"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="8dp">
 
-                        <LinearLayout
+                        <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_margin="6dp"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:contentDescription="@string/app_name"
-                                android:src="@drawable/ic_add_link" />
-                        </LinearLayout>
+                            android:contentDescription="@string/app_name"
+                            android:padding="14dp"
+                            android:src="@drawable/ic_add_link"
+                            app:tint="@color/white" />
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
 
+                <!-- Embedded Banner Ad Container -->
                 <LinearLayout
                     android:id="@+id/main_adview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:orientation="horizontal" />
+                    android:orientation="horizontal"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp" />
             </LinearLayout>
 
+            <!-- Navigation Drawer Panel -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -168,90 +172,105 @@
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/tolbar_gradient"
+                android:background="#161C24"
+                android:elevation="8dp"
                 app:itemIconTint="@color/white"
+                app:itemRippleColor="@color/brand_primary_variant"
                 app:itemTextColor="@color/white"
                 app:menu="@menu/bottom_nav_menu" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- ScrollView للاتفاقيات كطبقة تغطي باقي العناصر -->
+    <!-- ScrollView for Terms & Usage Agreements Overlay -->
     <ScrollView
         android:id="@+id/usage_agreements"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/body_gradient"
-        android:visibility="visible"
-        android:elevation="20dp">
+        android:background="#F00B0E14"
+        android:elevation="24dp"
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:fontFamily="sans-serif-bold"
+                android:paddingBottom="12dp"
                 android:text="@string/user_agreement"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:lineSpacingExtra="4dp"
+                android:paddingBottom="16dp"
                 android:text="@string/agreements"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
+                android:textColor="@color/secondary"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
                 android:text="@string/privacy_policy"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
+                android:textColor="@color/brand_accent"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/copyright"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp"
                 android:text="@string/copyright"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
+                android:textColor="@color/brand_accent"
+                android:textSize="15sp" />
 
             <CheckBox
                 android:id="@+id/im_agree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/brand_accent"
+                android:paddingStart="8dp"
                 android:text="@string/im_agree"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
+                android:textSize="16sp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/done"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:layout_margin="5dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:selectableItemBackgroundBorderless"
                 android:tag="fab"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="50dp"
-                app:cardElevation="10dp">
+                app:cardBackgroundColor="@color/brand_primary"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clickable="false"
                     android:contentDescription="@string/app_name"
+                    android:padding="12dp"
                     android:rotation="180"
-                    android:src="@drawable/ic_back" />
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/white" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
