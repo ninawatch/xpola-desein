@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Single XPoLa Brand Accent Color -->
-    <color name="brand_primary">#3B82F6</color>
-    <color name="brand_primary_variant">#2563EB</color>
+    <!-- Brand Primary Palette -->
+    <color name="brand_primary">#2563EB</color>
+    <color name="brand_primary_variant">#1D4ED8</color>
     <color name="brand_accent">#3B82F6</color>
 
-    <!-- Dark Cinematic Palette (Near-black deep navy) -->
-    <color name="bg_dark">#080C14</color>
-    <color name="bg_surface">#121824</color>
-    <color name="bg_surface_elevated">#1E293B</color>
+    <!-- Dark Cinematic Backgrounds & Glass Surfaces -->
+    <color name="bg_dark">#070A10</color>
+    <color name="bg_surface">#111723</color>
+    <color name="bg_surface_elevated">#1A2234</color>
 
-    <!-- Text Colors -->
+    <!-- Typography -->
     <color name="text_primary">#F8FAFC</color>
     <color name="text_secondary">#94A3B8</color>
     <color name="text_disabled">#64748B</color>
 
-    <!-- Legacy / System Standard Mappings -->
+    <!-- System Standard Aliases -->
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
     <color name="purple_200">#3B82F6</color>
     <color name="purple_500">#2563EB</color>
     <color name="purple_700">#1D4ED8</color>
@@ -26,31 +27,31 @@
 
     <color name="items_text_color">#F8FAFC</color>
     <color name="accent">#3B82F6</color>
-    <color name="colorBody">#080C14</color>
+    <color name="colorBody">#070A10</color>
 
-    <color name="toolbar">#080C14</color>
-    <color name="body">#080C14</color>
+    <color name="toolbar">#070A10</color>
+    <color name="body">#070A10</color>
     <color name="secondary">#94A3B8</color>
     <color name="control2">#3B82F6</color>
     <color name="text_hint_color">#64748B</color>
     <color name="dialog_text_color">#FFFFFF</color>
-    <color name="colorPrimary">#3B82F6</color>
+    <color name="colorPrimary">#2563EB</color>
     <color name="primary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#080C14</color>
+    <color name="colorPrimaryDark">#070A10</color>
     <color name="colorAccent">#3B82F6</color>
-    <color name="colorControlHighlight">#1A3B82F6</color>
+    <color name="colorControlHighlight">#1A2563EB</color>
     <color name="colorControlNormal">#94A3B8</color>
-    <color name="ic_launcher_background">#080C14</color>
+    <color name="ic_launcher_background">#070A10</color>
 
-    <!-- Semantic Only Colors -->
+    <!-- Functional Status Badges -->
     <color name="update_button_background">#10B981</color>
     <color name="green">#10B981</color>
 
-    <!-- Player & Focus Colors -->
+    <!-- Player & TV Focus Colors -->
     <color name="server_active_color">#3B82F6</color>
     <color name="server_inactive_color">#94A3B8</color>
-    <color name="black_trans">#B3000000</color>
-    <color name="glass_card_bg">#1A121824</color>
-    <color name="glass_card_border">#1E2B3C</color>
+    <color name="black_trans">#CC000000</color>
+    <color name="glass_card_bg">#20111723</color>
+    <color name="glass_card_border">#1E293B</color>
     <color name="tv_focus_stroke">#3B82F6</color>
 </resources>

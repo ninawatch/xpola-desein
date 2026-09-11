@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Typography Sizes -->
+    <!-- Typography Scales -->
     <dimen name="text_size_10">10sp</dimen>
     <dimen name="text_size_12">12sp</dimen>
     <dimen name="text_size_14">14sp</dimen>
@@ -14,7 +14,7 @@
     <dimen name="channel_item_width">52dp</dimen>
     <dimen name="drawer_icons_size">24dp</dimen>
 
-    <!-- Layout Spacing -->
+    <!-- Spacing -->
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_sm">8dp</dimen>
     <dimen name="spacing_md">12dp</dimen>
@@ -22,8 +22,8 @@
     <dimen name="spacing_xl">28dp</dimen>
 
     <!-- Corner Radii -->
-    <dimen name="radius_sm">6dp</dimen>
-    <dimen name="radius_md">10dp</dimen>
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">12dp</dimen>
     <dimen name="radius_lg">16dp</dimen>
 
     <!-- Player Controls -->
