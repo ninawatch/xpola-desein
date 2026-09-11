@@ -1,35 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Brand / Accent Colors -->
+    <color name="brand_primary">#6366F1</color>
+    <color name="brand_primary_variant">#4F46E5</color>
+    <color name="brand_accent">#00E5FF</color>
+    <color name="brand_accent_glow">#3300E5FF</color>
 
-    <color name="items_text_color">#FF525252</color>
-    <color name="accent">#FFFFFFFF</color>
-    <color name="colorBody">#FF404040</color>
+    <!-- Dark Theme Background Palette -->
+    <color name="bg_dark">#0B0E14</color>
+    <color name="bg_surface">#161C24</color>
+    <color name="bg_surface_elevated">#212B36</color>
+    <color name="bg_surface_glass">#CC161C24</color>
 
-    <color name="toolbar">#1c3a5e</color>
-    <color name="body">@color/colorPrimary</color>
-    <color name="secondary">#FFFFFFFF</color>
-    <color name="control2">#FFC29C31</color>
-    <color name="text_hint_color">#FF607D8B</color>
-    <color name="dialog_text_color">@color/white</color>
-    <color name="colorPrimary">#1f4068</color>
-    <color name="primary">@color/white</color>
-    <color name="colorPrimaryDark">@color/toolbar</color>
-    <color name="colorAccent">#DCF7F3</color>
-    <color name="colorControlHighlight">#4834d4</color>
-    <color name="colorControlNormal">#DCF7F3</color>
-    <color name="ic_launcher_background">#FFFFFFFF</color>
-    <color name="update_button_background">#27ae60</color>
-    <color name="green">#4CAF50</color>
-    <!-- servers color -->
-    <color name="server_active_color">#ffdd59</color>
-    <color name="server_inactive_color">@color/white</color>
-    <color name="black_trans">#161513c9</color>
+    <!-- Legacy / Compatibility Aliases -->
+    <color name="purple_200">#818CF8</color>
+    <color name="purple_500">#6366F1</color>
+    <color name="purple_700">#4F46E5</color>
+    <color name="teal_200">#00E5FF</color>
+    <color name="teal_700">#00B4D8</color>
 
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="items_text_color">#E2E8F0</color>
+    <color name="accent">#00E5FF</color>
+    <color name="colorBody">#161C24</color>
+
+    <color name="toolbar">#0B0E14</color>
+    <color name="body">#0B0E14</color>
+    <color name="secondary">#94A3B8</color>
+    <color name="control2">#6366F1</color>
+    <color name="text_hint_color">#64748B</color>
+    <color name="dialog_text_color">#FFFFFF</color>
+    <color name="colorPrimary">#6366F1</color>
+    <color name="primary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#0B0E14</color>
+    <color name="colorAccent">#00E5FF</color>
+    <color name="colorControlHighlight">#336366F1</color>
+    <color name="colorControlNormal">#94A3B8</color>
+    <color name="ic_launcher_background">#0B0E14</color>
+    <color name="update_button_background">#10B981</color>
+    <color name="green">#10B981</color>
+
+    <!-- TV Focus & Servers -->
+    <color name="server_active_color">#00E5FF</color>
+    <color name="server_inactive_color">#94A3B8</color>
+    <color name="black_trans">#80000000</color>
+    <color name="glass_card_bg">#25FFFFFF</color>
+    <color name="glass_card_border">#33FFFFFF</color>
+    <color name="tv_focus_stroke">#00E5FF</color>
 </resources>

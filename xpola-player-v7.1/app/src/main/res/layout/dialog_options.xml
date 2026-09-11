@@ -1,47 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dialog_options_par"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/dialog_back"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_glass"
     android:orientation="vertical"
-    android:padding="6dp">
+    android:padding="12dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/dialog_options_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="4dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:selectableItemBackgroundBorderless"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="5dp">
+        app:cardBackgroundColor="#161C24"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="center_vertical|center|center_horizontal"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="12dp">
 
             <ImageView
                 android:id="@+id/dialog_edit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_edit"
-                app:tint="@color/black" />
+                app:tint="@color/brand_accent" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:gravity="center_vertical|center|center_horizontal"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="12dp"
                 android:text="@string/edit_dialog"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -49,37 +50,37 @@
         android:id="@+id/dialog_options_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="4dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:selectableItemBackgroundBorderless"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="5dp">
+        app:cardBackgroundColor="#161C24"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="center_vertical|center|center_horizontal"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="12dp">
 
             <ImageView
                 android:id="@+id/dialog_delete"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_delete"
-                app:tint="@color/black" />
+                app:tint="#EF4444" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:gravity="center_vertical|center|center_horizontal"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="12dp"
                 android:text="@string/delete_dialog"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="#EF4444"
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -87,38 +88,37 @@
         android:id="@+id/dialog_options_close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="4dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:selectableItemBackgroundBorderless"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="5dp">
+        app:cardBackgroundColor="#161C24"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="center_vertical|center|center_horizontal"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="12dp">
 
             <ImageView
                 android:id="@+id/dialog_close"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_close"
-                app:tint="@color/black" />
+                app:tint="@color/secondary" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:gravity="center_vertical|center|center_horizontal"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="12dp"
                 android:text="@string/close_dialog"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/secondary"
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

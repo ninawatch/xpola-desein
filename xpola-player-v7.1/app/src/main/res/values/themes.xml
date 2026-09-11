@@ -1,50 +1,47 @@
 <resources>
 
     <style name="Theme.AGH.DEV" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryDark">@color/bg_dark</item>
+        <item name="colorAccent">@color/brand_accent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
-        <item name="android:statusBarColor">@color/toolbar</item>
-        <item name="android:navigationBarColor">@color/body</item>
-        <item name="android:fontFamily">@font/droid</item>
-        <item name="fontFamily">@font/droid</item>
-        <item name="boxStrokeColor">@color/black</item>
-        <item name="boxStrokeWidth">3dp</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="boxStrokeColor">@color/brand_primary</item>
+        <item name="boxStrokeWidth">1.5dp</item>
     </style>
-    <style name="Theme.AGH.DEV.ABOUT"
-        parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <!-- نفس ألوان التطبيق -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
+    <style name="Theme.AGH.DEV.ABOUT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryDark">@color/bg_dark</item>
+        <item name="colorAccent">@color/brand_accent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
-
-        <item name="android:statusBarColor">@color/toolbar</item>
-        <item name="android:navigationBarColor">@color/body</item>
-
-        <item name="android:fontFamily">@font/droid</item>
-        <item name="fontFamily">@font/droid</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
     </style>
+
     <style name="Theme.AGH.DEV.SPLASH" parent="Theme.AGH.DEV">
-        <item name="android:statusBarColor">@color/body</item>
-        <item name="android:navigationBarColor">@color/body</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
     </style>
 
     <style name="Theme.AGH.DEV.FULLSCREEN" parent="@style/Theme.AGH.DEV">
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/black</item>
     </style>
 
-
     <style name="TextInputTheme" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/white</item>
-        <item name="boxStrokeWidth">2dp</item>
-        <item name="boxStrokeErrorColor">#FFFF0000</item>
+        <item name="boxStrokeColor">@color/brand_primary</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxStrokeErrorColor">#EF4444</item>
+        <item name="hintTextColor">@color/secondary</item>
     </style>
 
     <style name="Theme.AGH.DEV.DIALOG">
@@ -61,7 +58,6 @@
         <item name="android:src">@drawable/ic_aspect_ratio</item>
         <item name="android:contentDescription">RATIO</item>
     </style>
-
 
     <style name="ExoStyledControls.Button.Bottom.PIP" parent="@style/ExoStyledControls.Button.Bottom">
         <item name="android:src">@drawable/ic_pip</item>
@@ -91,6 +87,8 @@
     <!-- Dialog Style for Center Popup -->
     <style name="CenterDialog" parent="ThemeOverlay.AppCompat.Dialog">
         <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+
+        <item name="android:windowBackground">@drawable/bg_dialog_glass</item>
     </style>
 
     <!-- Fade Animation for Dialog -->
@@ -98,8 +96,8 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
-    <style name="ExoStyledControls.Button.Bottom.Copy"
-        parent="@style/ExoStyledControls.Button.Bottom">
+
+    <style name="ExoStyledControls.Button.Bottom.Copy" parent="@style/ExoStyledControls.Button.Bottom">
         <item name="android:src">@drawable/ic_copy</item>
         <item name="android:contentDescription">Copy</item>
     </style>

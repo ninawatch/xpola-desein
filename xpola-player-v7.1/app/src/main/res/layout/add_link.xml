@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addlinks_parent"
@@ -7,33 +7,40 @@
     android:background="@drawable/body_gradient"
     android:orientation="vertical">
 
+    <!-- Header Bar -->
     <LinearLayout
         android:id="@+id/addlinks_top_bar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/tolbar_gradient"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="4dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
         <ImageView
             android:id="@+id/addlinks_back"
             style="?android:actionButtonStyle"
-            android:layout_width="@android:dimen/app_icon_size"
-            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:contentDescription="@string/app_name"
             android:focusable="true"
-            android:src="@drawable/ic_back" />
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/addlinks_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:fontFamily="sans-serif-bold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             android:text="@string/app_name"
-            android:textColor="#FFFFFFFF"
-            android:textSize="@dimen/text_size_16" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <ScrollView
@@ -42,32 +49,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_links_name_par"
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/name"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,24 +78,19 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_link"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/url_link_m3u_m3u8_ts_mp4"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -100,23 +98,19 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_user_agent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/user_agent"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -124,24 +118,19 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_ref"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/referer"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -149,24 +138,19 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_auth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/auth"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -174,24 +158,19 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_cookie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/cookie"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -199,135 +178,106 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:padding="3dp"
-                android:textColorHint="#CDCDCD"
-                app:endIconMode="clear_text"
-                app:hintTextColor="@color/white">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_license"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:clickable="false"
                     android:focusable="true"
-                    android:gravity="center_vertical"
                     android:hint="@string/license"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:textColorHint="@color/white"
-                android:gravity="center"
-                android:background="?android:selectableItemBackground"
-                android:layout_width="fill_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:layout_marginStart="2.0dip"
-                app:endIconMode="dropdown_menu"
-                app:hintTextColor="@color/white"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="dropdown_menu">
 
                 <AutoCompleteTextView
-                    android:textSize="@dimen/text_size_18"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
                     android:id="@+id/addlinks_scheme"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/scheme"
-                    android:paddingStart="8.0dip" />
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/force_m3u"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1.0"
-                    android:checked="false"
-                    android:focusable="true"
-                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/brand_accent"
                     android:text="@string/is_m3u_link"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/check_web_browser"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1.0"
-                    android:checked="false"
-                    android:focusable="true"
-                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/brand_accent"
                     android:text="@string/web_browser"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/check_exo_player"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1.0"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/brand_accent"
                     android:checked="true"
-                    android:focusable="true"
-                    android:gravity="center"
                     android:text="@string/exoplayer"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/check_web_player"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1.0"
-                    android:checked="false"
-                    android:focusable="true"
-                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/brand_accent"
                     android:text="@string/web_player"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_16" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/addlinks_saver"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="40dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="8dp"
-                android:singleLine="true"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/button_gradient_background"
+                android:fontFamily="sans-serif-bold"
                 android:text="@string/save"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/text_size_16" />
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 
