@@ -4,15 +4,15 @@
     android:id="@+id/addlinks_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/body_gradient"
+    android:background="@color/bg_dark"
     android:orientation="vertical">
 
-    <!-- Compact Header Bar -->
+    <!-- Top Header Bar -->
     <LinearLayout
         android:id="@+id/addlinks_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="#121824"
+        android:layout_height="56dp"
+        android:background="@color/bg_dark"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="16dp"
@@ -21,13 +21,13 @@
         <ImageView
             android:id="@+id/addlinks_back"
             style="?android:actionButtonStyle"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle_icon"
             android:clickable="true"
             android:contentDescription="@string/app_name"
             android:focusable="true"
-            android:padding="6dp"
+            android:padding="8dp"
             android:src="@drawable/ic_back"
             app:tint="@color/white" />
 
@@ -36,16 +36,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,24 +54,39 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- SECTION 1: SOURCE -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- SECTION 1: SOURCE CONFIGURATION -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-bold"
-                android:letterSpacing="0.05"
-                android:text="SOURCE"
-                android:textColor="@color/brand_accent"
-                android:textSize="12sp" />
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_gradient_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.08"
+                    android:text="SOURCE CONFIGURATION"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_links_name_par"
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:endIconMode="clear_text">
+                android:layout_marginBottom="12dp"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_video"
+                app:startIconTint="@color/brand_primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_name"
@@ -89,8 +105,10 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:endIconMode="clear_text">
+                android:layout_marginBottom="20dp"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_add_link"
+                app:startIconTint="@color/brand_primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/addlinks_link"
@@ -104,23 +122,36 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- SECTION 2: HEADERS -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- SECTION 2: HTTP HEADERS -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-bold"
-                android:letterSpacing="0.05"
-                android:text="HEADERS"
-                android:textColor="@color/brand_accent"
-                android:textSize="12sp" />
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_gradient_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.08"
+                    android:text="HTTP HEADERS"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_links_useragent_par"
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -140,7 +171,7 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -160,7 +191,7 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -175,23 +206,36 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- SECTION 3: AUTHENTICATION & ADVANCED -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- SECTION 3: ADVANCED & DRM -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-bold"
-                android:letterSpacing="0.05"
-                android:text="ADVANCED &amp; SECURITY"
-                android:textColor="@color/brand_accent"
-                android:textSize="12sp" />
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_gradient_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.08"
+                    android:text="SECURITY &amp; DRM"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_links_auth_par"
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -211,7 +255,7 @@
                 style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="12dp"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -227,10 +271,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/TextInputTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 app:endIconMode="dropdown_menu">
 
                 <AutoCompleteTextView
@@ -244,20 +288,34 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- SECTION 4: PLAYBACK OPTIONS -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- SECTION 4: OPTIONS -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-bold"
-                android:letterSpacing="0.05"
-                android:text="OPTIONS"
-                android:textColor="@color/brand_accent"
-                android:textSize="12sp" />
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_gradient_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.08"
+                    android:text="PLAYBACK OPTIONS"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:orientation="horizontal">
 
                 <CheckBox
@@ -265,7 +323,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:buttonTint="@color/brand_accent"
+                    android:buttonTint="@color/brand_primary"
                     android:text="@string/is_m3u_link"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
@@ -275,7 +333,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:buttonTint="@color/brand_accent"
+                    android:buttonTint="@color/brand_primary"
                     android:text="@string/web_browser"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
@@ -284,7 +342,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="24dp"
                 android:orientation="horizontal">
 
                 <CheckBox
@@ -292,7 +350,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:buttonTint="@color/brand_accent"
+                    android:buttonTint="@color/brand_primary"
                     android:checked="true"
                     android:text="@string/exoplayer"
                     android:textColor="@color/white"
@@ -303,7 +361,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:buttonTint="@color/brand_accent"
+                    android:buttonTint="@color/brand_primary"
                     android:text="@string/web_player"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
@@ -312,13 +370,13 @@
             <Button
                 android:id="@+id/addlinks_saver"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/button_gradient_background"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/save"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 
