@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Modern Cyan-Purple Brand Palette (Matching reference design) -->
+    <!-- Brand & XPola Specific Theme Colors -->
+    <color name="xpola_bg">#080C16</color>
+    <color name="xpola_header">#0B101D</color>
+    <color name="xpola_text_secondary">#8E9CAE</color>
+    <color name="xpola_card">#131927</color>
+    <color name="xpola_blue_border">#1E2E4A</color>
+    <color name="xpola_field">#161D2E</color>
+    <color name="xpola_cyan">#00C6FF</color>
+    <color name="xpola_hint">#526075</color>
+    <color name="xpola_cyan_border">#1A3047</color>
+    <color name="xpola_purple_border">#2A2048</color>
+    <color name="xpola_option">#151B2A</color>
+    <color name="xpola_option_border">#1E283C</color>
+
+    <!-- Modern Cyan-Purple Brand Palette -->
     <color name="brand_primary">#00C6FF</color>
     <color name="brand_primary_variant">#7F00FF</color>
     <color name="brand_accent">#00D2FF</color>

@@ -1,383 +1,821 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addlinks_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/xpola_bg">
 
-    <!-- Top Header Bar -->
+    <!-- ========================================================= -->
+    <!-- TOP APP BAR -->
+    <!-- ========================================================= -->
+
     <LinearLayout
         android:id="@+id/addlinks_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/bg_dark"
+        android:layout_height="78dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:background="@color/xpola_header">
 
+        <!-- Back -->
         <ImageView
             android:id="@+id/addlinks_back"
-            style="?android:actionButtonStyle"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_circle_icon"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:focusable="true"
-            android:padding="8dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="10dp"
+            android:background="@drawable/xpola_circle_button"
             android:src="@drawable/ic_back"
-            app:tint="@color/white" />
+            android:contentDescription="@string/app_name"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@android:color/white" />
 
-        <TextView
-            android:id="@+id/addlinks_item_name"
-            android:layout_width="match_parent"
+        <!-- Brand -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:paddingStart="16dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xPola Player"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Advanced Configuration"
+                android:textColor="@color/xpola_text_secondary"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <!-- Save & Play -->
+        <LinearLayout
+            android:id="@+id/xpola_save_play"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:minWidth="145dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
             android:paddingEnd="16dp"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:background="@drawable/xpola_save_play">
+
+            <TextView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:text="✓"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save &amp; Play"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Configure your stream"
+                    android:textColor="@color/xpola_text_secondary"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENT -->
+    <!-- ========================================================= -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="30dp">
 
-            <!-- SECTION 1: SOURCE CONFIGURATION -->
-            <LinearLayout
+
+            <!-- ================================================= -->
+            <!-- SOURCE -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/xpola_card"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/xpola_blue_border"
+                app:strokeWidth="1dp">
 
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/button_gradient_background" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-bold"
-                    android:letterSpacing="0.08"
-                    android:text="SOURCE CONFIGURATION"
-                    android:textColor="@color/brand_primary"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_name_par"
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="clear_text"
-                app:startIconDrawable="@drawable/ic_video"
-                app:startIconTint="@color/brand_primary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_name"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/name"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_link_par"
-                style="@style/TextInputTheme"
+                    <!-- Section header -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:text="↗"
+                            android:textColor="@android:color/white"
+                            android:textSize="27sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/xpola_icon_blue" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Source"
+                                android:textColor="@android:color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Set your media source or playlist"
+                                android:textColor="@color/xpola_text_secondary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="⌃"
+                            android:textColor="@color/xpola_text_secondary"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+
+                    <!-- Name -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_name_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_video"
+                        app:startIconTint="@color/xpola_cyan">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/name"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- URL -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_link_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_add_link"
+                        app:startIconTint="@color/xpola_cyan">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/url_link_m3u_m3u8_ts_mp4"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ================================================= -->
+            <!-- HEADERS -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:endIconMode="clear_text"
-                app:startIconDrawable="@drawable/ic_add_link"
-                app:startIconTint="@color/brand_primary">
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/xpola_card"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/xpola_cyan_border"
+                app:strokeWidth="1dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_link"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/url_link_m3u_m3u8_ts_mp4"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
-            <!-- SECTION 2: HTTP HEADERS -->
-            <LinearLayout
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:text="≡"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/xpola_icon_cyan" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Headers"
+                                android:textColor="@android:color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add custom request headers"
+                                android:textColor="@color/xpola_text_secondary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="⌃"
+                            android:textColor="@color/xpola_text_secondary"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+
+                    <!-- User Agent -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_useragent_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_user_agent"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/user_agent"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Referer -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_ref_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_ref"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/referer"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Cookie -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_cookie_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_cookie"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/cookie"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ================================================= -->
+            <!-- ADVANCED & SECURITY -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/xpola_card"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/xpola_purple_border"
+                app:strokeWidth="1dp">
 
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/button_gradient_background" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-bold"
-                    android:letterSpacing="0.08"
-                    android:text="HTTP HEADERS"
-                    android:textColor="@color/brand_primary"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_useragent_par"
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="clear_text">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_user_agent"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/user_agent"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_ref_par"
-                style="@style/TextInputTheme"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:text="✓"
+                            android:textColor="@android:color/white"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/xpola_icon_purple" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Advanced &amp; Security"
+                                android:textColor="@android:color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Authentication, license and other options"
+                                android:textColor="@color/xpola_text_secondary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="⌃"
+                            android:textColor="@color/xpola_text_secondary"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+
+                    <!-- Authentication -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_auth_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_auth"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/auth"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- License -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_links_license_par"
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="clear_text">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addlinks_license"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/license"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Scheme -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/TextInputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxBackgroundColor="@color/xpola_field"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="dropdown_menu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/addlinks_scheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="58dp"
+                            android:hint="@string/scheme"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/xpola_hint"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ================================================= -->
+            <!-- PLAYER OPTIONS -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="clear_text">
+                android:layout_marginBottom="18dp"
+                app:cardBackgroundColor="@color/xpola_card"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/xpola_cyan_border"
+                app:strokeWidth="1dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_ref"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/referer"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_cookie_par"
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:endIconMode="clear_text">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_cookie"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/cookie"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:text="☷"
+                            android:textColor="@android:color/white"
+                            android:textSize="27sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/xpola_icon_green" />
 
-            <!-- SECTION 3: ADVANCED & DRM -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp"
+                            android:orientation="vertical">
 
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/button_gradient_background" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Player Options"
+                                android:textColor="@android:color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-bold"
-                    android:letterSpacing="0.08"
-                    android:text="SECURITY &amp; DRM"
-                    android:textColor="@color/brand_primary"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Choose the player type and additional options"
+                                android:textColor="@color/xpola_text_secondary"
+                                android:textSize="12sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_auth_par"
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="clear_text">
+                        </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_auth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/auth"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="⌄"
+                            android:textColor="@color/xpola_text_secondary"
+                            android:textSize="24sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_links_license_par"
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="clear_text">
+                    </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addlinks_license"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="true"
-                    android:hint="@string/license"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/TextInputTheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:endIconMode="dropdown_menu">
+                    <!-- OPTIONS GRID -->
 
-                <AutoCompleteTextView
-                    android:id="@+id/addlinks_scheme"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/scheme"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:orientation="horizontal">
 
-            <!-- SECTION 4: OPTIONS -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="58dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="5dp"
+                            app:cardBackgroundColor="@color/xpola_option"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/xpola_option_border"
+                            app:strokeWidth="1dp">
 
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/button_gradient_background" />
+                            <CheckBox
+                                android:id="@+id/force_m3u"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:buttonTint="@color/xpola_cyan"
+                                android:text="@string/is_m3u_link"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="5dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-bold"
-                    android:letterSpacing="0.08"
-                    android:text="PLAYBACK OPTIONS"
-                    android:textColor="@color/brand_primary"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/force_m3u"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/brand_primary"
-                    android:text="@string/is_m3u_link"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="58dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="5dp"
+                            app:cardBackgroundColor="@color/xpola_option"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/xpola_option_border"
+                            app:strokeWidth="1dp">
 
-                <CheckBox
-                    android:id="@+id/check_web_browser"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/brand_primary"
-                    android:text="@string/web_browser"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-            </LinearLayout>
+                            <CheckBox
+                                android:id="@+id/check_web_browser"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:buttonTint="@color/xpola_cyan"
+                                android:text="@string/web_browser"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="5dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:orientation="horizontal">
+                        </com.google.android.material.card.MaterialCardView>
 
-                <CheckBox
-                    android:id="@+id/check_exo_player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/brand_primary"
-                    android:checked="true"
-                    android:text="@string/exoplayer"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/check_web_player"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/brand_primary"
-                    android:text="@string/web_player"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-            </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="58dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="5dp"
+                            app:cardBackgroundColor="@color/xpola_option"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/xpola_option_border"
+                            app:strokeWidth="1dp">
+
+                            <CheckBox
+                                android:id="@+id/check_exo_player"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:buttonTint="@color/xpola_cyan"
+                                android:checked="true"
+                                android:text="@string/exoplayer"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="5dp" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="58dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="5dp"
+                            app:cardBackgroundColor="@color/xpola_option"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/xpola_option_border"
+                            app:strokeWidth="1dp">
+
+                            <CheckBox
+                                android:id="@+id/check_web_player"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:buttonTint="@color/xpola_cyan"
+                                android:text="@string/web_player"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="5dp" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ================================================= -->
+            <!-- SAVE BUTTON -->
+            <!-- ================================================= -->
 
             <Button
                 android:id="@+id/addlinks_saver"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/button_gradient_background"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/save"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/xpola_save_button"
+                android:fontFamily="sans-serif"
+                android:text="✓   Save Configuration"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:elevation="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="🔒  Your configuration is stored securely on this device"
+                android:textColor="@color/xpola_text_secondary"
+                android:textSize="11sp"
+                android:paddingTop="6dp" />
+
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>
